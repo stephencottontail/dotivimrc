@@ -1,0 +1,3 @@
+[submodule "alabaster"]
+	path = colors
+	url = https://github.com/stephencottontail/alabaster.vim
