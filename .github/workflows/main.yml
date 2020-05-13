@@ -8,8 +8,9 @@ jobs:
         sync:
                 runs-on: ubuntu-latest
                 steps:
-                        - name: Sync
+                        - name: Checkout
                           uses: actions/checkout@v2
+                        - name: Sync
                           uses: jdickey/bash@master
                           with:
                                   args: 'git submodule sync'
