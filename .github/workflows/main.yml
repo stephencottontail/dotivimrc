@@ -11,6 +11,6 @@ jobs:
                         - name: Checkout
                           uses: actions/checkout@v2
                         - name: Sync
-                          uses: jdickey/bash@master
+                          uses: srt32/git-actions@v.0.0.3
                           with:
                                   args: 'git submodule sync'
