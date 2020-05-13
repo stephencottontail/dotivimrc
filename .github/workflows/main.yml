@@ -14,3 +14,7 @@ jobs:
                           uses: srt32/git-actions@v0.0.3
                           with:
                                   args: 'git submodule sync'
+                        - name: Update
+                          uses: srt32/git-actions@v0.0.3
+                          with:
+                                  args: 'git submodule update'
