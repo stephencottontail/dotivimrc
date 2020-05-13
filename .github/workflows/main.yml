@@ -1,0 +1,15 @@
+name: Submodules
+
+on:
+        push:
+                branches: [ workflow-test ]
+
+jobs:
+        sync:
+                runs-on: ubuntu-latest
+                steps:
+                        - name: Sync
+                          uses: actions/checkout@v2
+                          uses: jdickey/bash@master
+                          with:
+                                  args: 'git submodule sync'
