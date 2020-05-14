@@ -1,6 +1,6 @@
 [submodule "colors"]
 	path = colors
-	url = git@github.com:stephencottontail/alabaster.vim
+	url = https://github.com/stephencottontail/alabaster.vim
 [submodule "pathogen"]
 	path = pathogen
-	url = git@github.com:tpope/vim-pathogen.vim
+	url = https://github.com/tpope/vim-pathogen
