@@ -17,4 +17,4 @@ jobs:
                         - name: Update
                           uses: srt32/git-actions@v0.0.3
                           with:
-                                  args: 'git submodule update'
+                                  args: 'git submodule update --init'
