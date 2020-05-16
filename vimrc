@@ -1,3 +1,7 @@
+" set up pathogen
+source ~/dotivimrc/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect( '~/dotivimrc/{}' )
+
 " keep everything here for VC purposes
 set runtimepath+=~/dotivimrc
 set packpath+=~/dotivimrc
