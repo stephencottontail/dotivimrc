@@ -7,3 +7,6 @@
 [submodule "ctrlp.vim"]
 	path = ctrlp.vim
 	url = git@github.com:ctrlpvim/ctrlp.vim
+[submodule "vim-lsc"]
+	path = vim-lsc
+	url = git@github.com:natebosch/vim-lsc
