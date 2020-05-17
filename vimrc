@@ -21,3 +21,15 @@ nnoremap <Leader>wh <C-w>h
 nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
+
+" vim-lsc
+let g:lsc_auto_map = v:true
+let g:lsc_trace_level = "verbose"
+let g:lsc_server_commands = {
+			\ 'javascript': {
+			\ 'name': 'js',
+			\ 'command': 'ssh pi@raspberrypi.local "/home/pi/log-js-server"',
+			\ 'enabled': v:false
+			\ }
+			\ }
+
