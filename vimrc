@@ -21,3 +21,13 @@ nnoremap <Leader>wh <C-w>h
 nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
+
+" vim-gutentags
+let g:gutentags_trace = 1
+let g:gutentags_modules = ['ctags']
+let g:gutentags_ctags_executable = ':ictags'
+let g:gutentags_define_advanced_commands = 1
+" Working Copy doesn't clone the `.git` folder over, so
+" we want to use `.gitignore` as a marker instead
+let g:gutentags_project_root = ['.gitignore']
+let g:gutentags_enabled = 1
