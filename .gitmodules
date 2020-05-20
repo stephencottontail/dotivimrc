@@ -7,6 +7,3 @@
 [submodule "ctrlp.vim"]
 	path = ctrlp.vim
 	url = git@github.com:ctrlpvim/ctrlp.vim
-[submodule "vim-gutentags"]
-	path = vim-gutentags
-	url = git@github.com:stephencottontail/vim-gutentags.git

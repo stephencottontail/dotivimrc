@@ -22,12 +22,36 @@ nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
 
-" vim-gutentags
-let g:gutentags_trace = 1
-let g:gutentags_modules = ['ctags']
-let g:gutentags_ctags_executable = ':ictags'
-let g:gutentags_define_advanced_commands = 1
-" Working Copy doesn't clone the `.git` folder over, so
-" we want to use `.gitignore` as a marker instead
-let g:gutentags_project_root = ['.gitignore']
-let g:gutentags_enabled = 1
+" update ctags on save
+function! s:save_ctags( cur ) 
+	let l:found_root = ''
+	let l:proj_root = ''
+
+	try
+		let l:found_root = findfile( '.gitignore', fnamemodify( a:cur, ':h' ) . ';' )
+		if empty( l:found_root )
+			let l:found_root = finddir( '.git', fnamemodify( a:cur, ':h' ) . ';' )
+		endif
+		if empty( l:found_root )
+			throw 'no root'
+		endif
+	catch /^no\ root/
+		echoerr 'No valid project root found'
+	finally
+		try
+			let l:proj_root = fnamemodify( found_root, ':p:h' )
+			if ( proj_root =~ 'dotivimrc$' )
+				throw 'ignored project'
+			endif
+		catch /^ignored/
+			return
+		endtry
+	endtry
+
+	execute( 'silent! ictags -R -f ' . proj_root . '/tags' )
+endfunction
+
+augroup ivim-ctags
+	autocmd!
+	au BufWritePost * call s:save_ctags( expand( '%' ) )
+augroup END
