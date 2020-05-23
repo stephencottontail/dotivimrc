@@ -22,15 +22,17 @@ nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
 
-" update ctags on save
+" ctags setup
+set tags=tags,tags;
+
 function! s:save_ctags( cur ) 
 	let l:found_root = ''
 	let l:proj_root = ''
 
 	try
-		let l:found_root = findfile( '.gitignore', fnamemodify( a:cur, ':h' ) . ';' )
+		let l:found_root = findfile( '.gitignore', fnamemodify( a:cur, ':p:h' ) . ';' )
 		if empty( l:found_root )
-			let l:found_root = finddir( '.git', fnamemodify( a:cur, ':h' ) . ';' )
+			let l:found_root = finddir( '.git', fnamemodify( a:cur, ':p:h' ) . ';' )
 		endif
 		if empty( l:found_root )
 			throw 'no root'
@@ -48,7 +50,7 @@ function! s:save_ctags( cur )
 		endtry
 	endtry
 
-	execute( 'silent! ictags -R -f ' . proj_root . '/tags' )
+	execute( 'silent! ictags -R -f ' . proj_root . '/tags ' . proj_root )
 endfunction
 
 augroup ivim-ctags
