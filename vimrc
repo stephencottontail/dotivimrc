@@ -29,6 +29,11 @@ function! s:save_ctags( cur )
 	let l:found_root = ''
 	let l:proj_root = ''
 
+	" eventually i'd like to set up a variable to control all ignored paths
+	if ( stridx( fnamemodify( a:cur, ':p:h' ), 'ccef' ) > 0 )
+		return
+	endif
+
 	try
 		let l:found_root = findfile( '.gitignore', fnamemodify( a:cur, ':p:h' ) . ';' )
 		if empty( l:found_root )
