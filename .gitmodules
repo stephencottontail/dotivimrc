@@ -10,3 +10,6 @@
 [submodule "editorconfig-vim"]
 	path = editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim
+[submodule "gina.vim"]
+	path = gina.vim
+	url = git@github.com:lambdalisue/gina.vim
