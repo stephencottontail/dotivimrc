@@ -11,6 +11,8 @@ set packpath+=~/dotivimrc
 " this might be iVim-specific, and if it is, i should figure out how
 " to make this a conditional in case i ever move to a different Vim
 set guifont=iosevka-term-regular.ttf:h18
+set termguicolors
+syntax on
 colorscheme alabaster
 
 " global keybinds
