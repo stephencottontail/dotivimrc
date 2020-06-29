@@ -25,9 +25,18 @@ nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
 
 " ctags setup
+let g:gutentags_enabled = 0
+let g:gutentags_trace = 0
+
 set tags=tags,tags;
 
+" we're keeping this as a backup until i can get my gutentags setup
+" working
 function! s:save_ctags( cur ) 
+	if 1 == g:gutentags_enabled
+		return
+	endif
+
 	let l:found_root = ''
 	let l:proj_root = ''
 
@@ -57,7 +66,14 @@ function! s:save_ctags( cur )
 		endtry
 	endtry
 
-	execute( 'silent! ictags -R -f ' . proj_root . '/tags ' . proj_root )
+	echom proj_root
+	let l:cmd = [ 'ctags' ]
+	let l:cmd += [ '-R' ]
+	let l:cmd += [ '--exclude=node_modules' ]
+	let l:cmd += [ '-f', proj_root . '/tags' ]
+	let l:cmd += [ proj_root ]
+	let s:job = job_start( cmd )
+"	execute( '!ctags -R -f ' . proj_root . '/tags ' . proj_root )
 endfunction
 
 augroup ivim-ctags
