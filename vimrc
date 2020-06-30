@@ -24,6 +24,15 @@ nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wl <C-w>l
 
+" highlight group debugging
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+nnoremap <Leader>s :call SynStack()<CR>
+
 " ctags setup
 set tags=tags,tags;
 
