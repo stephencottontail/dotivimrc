@@ -12,6 +12,7 @@ set packpath+=~/dotivimrc
 " to make this a conditional in case i ever move to a different Vim
 set guifont=iosevka-term-regular.ttf:h18
 set termguicolors
+set smartindent
 syntax on
 colorscheme alabaster
 
