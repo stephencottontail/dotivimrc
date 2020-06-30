@@ -13,3 +13,6 @@
 [submodule "vim-gutentags"]
 	path = vim-gutentags
 	url = git@github.com:stephencottontail/vim-gutentags.git
+[submodule "inline-edit.vim"]
+	path = inline-edit.vim
+	url = git@github.com:AndrewRadev/inline_edit.vim
