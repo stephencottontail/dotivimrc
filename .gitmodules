@@ -16,3 +16,6 @@
 [submodule "inline-edit.vim"]
 	path = inline-edit.vim
 	url = git@github.com:AndrewRadev/inline_edit.vim
+[submodule "vim-jsx-pretty"]
+	path = vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty.git
