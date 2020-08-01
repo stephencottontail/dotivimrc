@@ -4,9 +4,6 @@
 [submodule "vim-pathogen"]
 	path = vim-pathogen
 	url = git@github.com:tpope/vim-pathogen
-[submodule "ctrlp.vim"]
-	path = ctrlp.vim
-	url = git@github.com:ctrlpvim/ctrlp.vim
 [submodule "editorconfig-vim"]
 	path = editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim
