@@ -6,6 +6,10 @@ execute pathogen#infect( '~/dotivimrc/{}' )
 set runtimepath+=~/dotivimrc
 set packpath+=~/dotivimrc
 
+" move generated files here to avoid polluting git
+set directory=$HOME/dotivimrc/swapfiles//
+set backupdir=$HOME/dotivimrc/backupfiles//
+
 " look and feel
 " 
 " this might be iVim-specific, and if it is, i should figure out how
